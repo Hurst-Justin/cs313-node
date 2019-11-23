@@ -16,7 +16,7 @@
     </form>
     <div id="output"></div>
     <script>
-    fetch("/getMovie").then(function(result){
+    fetch("/getMovie").then(function(result,1){
         console.log(result);
         return result.text();        
     }).then(function(result){
