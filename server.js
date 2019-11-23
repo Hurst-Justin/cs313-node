@@ -7,7 +7,7 @@ const connectionString = process.env.DATABASE_URL || "postgres://familyhistoryus
 const pool = new Pool({connectionString: connectionString});
 
 
-app.set("port",(process.env.port || 5000))
+app.set("port", (process.env.PORT || 5000))
 app.get("/getPerson", getPerson);
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port:  ", app.get("port"));
