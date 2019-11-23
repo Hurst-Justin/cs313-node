@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Postage Rate Calculator</title>
+    <title>Query ID</title>
 </head>
 <body>
-    <h1>Postage Rate Calculator</h1>
-    <form action="/calculatePostageRate" method="get">
+    <h1>Query ID</h1>
+    <form action="/getPerson" method="get">
         First-Class Retail Single Piece Mail Type: <br>
         <select name="type" style="width:200px">
             <option value="Letters (Stamped)">Letters (Stamped)</option>
@@ -16,10 +16,10 @@
             <option value="Large Envelopes (Flats)">Large Envelopes (Flats)</option>
             <option value="First-Class Package Service--Retail">First-Class Package Service--Retail</option>
         </select><br><br>
-        Weight Not Over (oz.): <br>
-        <input type="number" step="any" min="0.000001" max="13" name="weight" placeholder="oz." value=1 style="width:200px"><br>
+        ID: <br>
+        <input type="number" step="any" min="1" max="13" name="id" placeholder="id" value=1 style="width:200px"><br>
         <br>
-        <button type="sumbit">Calculate</button>
+        <button type="sumbit">Query ID</button>
     </form>
 </body>
 </html>
