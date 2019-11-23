@@ -26,8 +26,6 @@ function getMovie(req,res){
         } else {
             res.json(result[0]);
         }
-        // console.log("Back from the getMovieFromDb function with results:  ", result);
-        // res.json(result);
     })
 
 }
