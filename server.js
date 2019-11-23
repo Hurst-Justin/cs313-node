@@ -35,7 +35,7 @@ function getMovie(req,res){
 function getMovieFromDb(id, callback){
     console.log("getMovieFromDb called with id:  ", id);
 
-    var sql = "SELECT id, title FROM movies WHERE id = $1::int";
+    var sql = "SELECT id, title, releasedate, mpaa, genre, director, runtime, studio, summary FROM movies WHERE id = $1::int";
     var params = [id];
 
     pool.query(sql, params, function(err, result) {
