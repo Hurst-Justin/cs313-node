@@ -15,10 +15,10 @@ app.listen(app.get("port"), function() {
 });
 
 function getMovie(req,res){
-    console.log("Getting person information.");
+    console.log("Getting movies information.");
 
     var id = req.query.id;
-    console.log("Retrieving person with id:  ", id);
+    console.log("Retrieving movies with id:  ", id);
 
     getMovieFromDb(id, function(error, result) {
         if(error || result == null || result.length != 1){
@@ -35,7 +35,7 @@ function getMovie(req,res){
 function getMovieFromDb(id, callback){
     console.log("getMovieFromDb called with id:  ", id);
 
-    var sql = "SELECT id, first, last, birthdate FROM person WHERE id = $1::int";
+    var sql = "SELECT id, first, last, birthdate FROM movies WHERE id = $1::int";
     var params = [id];
 
     pool.query(sql, params, function(err, result) {
