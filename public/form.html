@@ -14,5 +14,14 @@
         <br>
         <button type="sumbit">Query ID</button>
     </form>
+    <div id="output"></div>
+    <script>
+    fetch("/api/all").then(function(response){
+        console.log(response);
+        return response.text();        
+    }).then(function(response){
+        document.getElementById("output").textContent= response;
+    })
+    </script>
 </body>
 </html>
