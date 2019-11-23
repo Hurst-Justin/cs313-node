@@ -24,7 +24,7 @@ function getMovie(req,res){
         if(error || result == null || result.length != 1){
             res.status(500).json({success:false, data:error});
         } else {
-            res.json(result);
+            res.render(result);
         }
     })
 
