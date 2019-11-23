@@ -9,31 +9,31 @@ const pool = new Pool({connectionString: connectionString});
 
 app.set("port", (process.env.PORT || 5000))
 .get('/', function(req, res){res.sendFile('form.html', { root: __dirname + '/public'});})
-app.get("/getPerson", getPerson);
+app.get("/getMovie", getMovie);
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port:  ", app.get("port"));
 });
 
-function getPerson(req,res){
+function getMovie(req,res){
     console.log("Getting person information.");
 
     var id = req.query.id;
     console.log("Retrieving person with id:  ", id);
 
-    getPersonFromDb(id, function(error, result) {
+    getMovieFromDb(id, function(error, result) {
         if(error || result == null || result.length != 1){
             res.status(500).json({success:false, data:error});
         } else {
             res.json(result[0]);
         }
-        // console.log("Back from the getPersonFromDb function with results:  ", result);
+        // console.log("Back from the getMovieFromDb function with results:  ", result);
         // res.json(result);
     })
 
 }
 
-function getPersonFromDb(id, callback){
-    console.log("getPersonFromDb called with id:  ", id);
+function getMovieFromDb(id, callback){
+    console.log("getMovieFromDb called with id:  ", id);
 
     var sql = "SELECT id, first, last, birthdate FROM person WHERE id = $1::int";
     var params = [id];
