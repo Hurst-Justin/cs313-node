@@ -29,7 +29,7 @@ function getMovie(req,res){
         } else {
             // var result = {id: id, title: title, releasedate: releasedate};
             // res.render('results.ejs', result);
-            res.render(json(result[0]));
+            res.json(result[0]);
         }
     })
 
