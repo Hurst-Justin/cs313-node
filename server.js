@@ -27,9 +27,9 @@ function getMovie(req,res){
         if(error || result == null || result.length != 1){
             res.status(500).json({success:false, data:error});
         } else {
-            // var result = {id: id, title: title, releasedate: releasedate};
-            // res.render('results.ejs', result);
-            res.render(result[0]);
+            var result = {id: id, title: title, releasedate: releasedate};
+            res.render('results.ejs', result);
+            // res.render(result[0]);
         }
     })
 
