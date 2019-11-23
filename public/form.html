@@ -16,11 +16,11 @@
     </form>
     <div id="output"></div>
     <script>
-    fetch("/getMovie").then(function(result,1){
+    fetch("/getMovie").then(function(result){
         console.log(result);
         return result.text();        
     }).then(function(result){
-        document.getElementById("output").textContent = result;
+        document.getElementById("output").textContent = "test" + result;
     })
     </script>
 </body>
