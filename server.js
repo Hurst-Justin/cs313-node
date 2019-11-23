@@ -50,7 +50,7 @@ function getMovieFromDb(id, callback){
 
         console.log("Found DB result:  ", JSON.stringify(result.rows));
 
-        callback(null, JSON.stringify(result.rows));
+        callback(null, JSON(result.rows));
 
     })
 }
