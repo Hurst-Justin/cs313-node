@@ -8,12 +8,13 @@
 </head>
 <body>
     <h1>Justin's Movie Database</h1>
-    <form action="/getMovie" method="get">
+    <!-- <form action="/getMovie" method="get"> -->
         ID: <br>
         <input type="number" min="1" max="13" name="id" placeholder="id" value=1 style="width:200px"><br>
         <br>
-        <button type="sumbit">Query ID</button>
-    </form>
+        <button onclick="getMovie()">Get Weather Forecast from Weather.gov</button><br />
+        <!-- <button type="sumbit">Query ID</button> -->
+    <!-- </form> -->
     <div id="output"></div>
     <script>
     fetch("/getMovie").then(function(result){
