@@ -29,7 +29,7 @@ function getMovie(req,res){
         } else {
             // var result = {id: id, title: title, releasedate: releasedate};
             // res.render('results.ejs', result);
-            res.json(result[0]);
+            res.render(result[0]);
         }
     })
 
@@ -50,7 +50,7 @@ function getMovieFromDb(id, callback){
 
         console.log("Found DB result:  ", JSON.stringify(result.rows));
 
-        callback(null, result.rows);
+        callback(null, JSON.stringify(result.rows));
 
     })
 }
