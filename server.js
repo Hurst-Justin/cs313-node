@@ -8,6 +8,7 @@ const pool = new Pool({connectionString: connectionString});
 
 
 app.set("port", (process.env.PORT || 5000))
+.get('/', function(req, res){res.sendFile('form.html', { root: __dirname + '/public'});})
 app.get("/getPerson", getPerson);
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port:  ", app.get("port"));
