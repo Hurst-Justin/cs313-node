@@ -16,11 +16,11 @@
     </form>
     <div id="output"></div>
     <script>
-    fetch("/api/all").then(function(response){
-        console.log(response);
-        return response.text();        
-    }).then(function(response){
-        document.getElementById("output").textContent= response;
+    fetch("/getMovie").then(function(result){
+        console.log(result);
+        return result.text();        
+    }).then(function(result){
+        document.getElementById("output").textContent = result;
     })
     </script>
 </body>
