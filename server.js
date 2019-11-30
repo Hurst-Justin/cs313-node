@@ -81,7 +81,7 @@ function search() {
   
     // Set up the parameters to send to the API
     var params = '?apikey=d28e3b70&s=' + encodeURIComponent(searchString);
-    var url = 'http://www.omdbapi.com/' + params;
+    var url = 'https://www.omdbapi.com/' + params;
   
     xhr.open('GET', url);
     xhr.send();
