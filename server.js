@@ -1,5 +1,4 @@
 var express = require("express");
-var movies = require('./movies-xhr.js');
 var app = express();
 
 const { Pool } = require("pg");
