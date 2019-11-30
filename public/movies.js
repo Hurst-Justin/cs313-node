@@ -21,7 +21,7 @@ function search() {
     };
   
     // Set up the parameters to send to the API
-    var params = '?apikey=3f833455&page=1-2&s=' + encodeURIComponent(searchString);
+    var params = '?apikey=3f833455&s=' + encodeURIComponent(searchString);
     var url = 'https://private.omdbapi.com/' + params;
   
     xhr.open('GET', url);
