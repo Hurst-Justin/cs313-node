@@ -42,9 +42,10 @@ function search() {
         const title = data.Search[i].Title;
         const year = data.Search[i].Year;
         const poster = data.Search[i].Poster;
+        const imdb = data.Search[i].imdbID;
   
         console.log('Adding: ' + title);
-        const content = `<li><p><img src=${poster}  alt=${title} width="200" ></img> ${title} (${year})</p></li>`;
+        const content = `<li><p><img src=${poster}  alt=${title} width="200" ></img></p><p><a href="https://www.imdb.com/title/${imdb}" target="_blank">${title} (${year})</a></p></li>`;
         resultList.innerHTML += content;
       }
     }
