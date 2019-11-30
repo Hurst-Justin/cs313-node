@@ -45,7 +45,7 @@ function search() {
         const imdb = data.Search[i].imdbID;
   
         console.log('Adding: ' + title);
-        const content = `<li><p><img src=${poster}  alt=${title} width="200" ></img></p><p><a href="https://www.imdb.com/title/${imdb}" target="_blank">${title} (${year})</a></p></li>`;
+        const content = `<li><h3><a href="https://www.imdb.com/title/${imdb}" target="_blank">${title} (${year})</a></h3><p><img src=${poster}  alt=${title} width="100" ></img></p></li>`;
         resultList.innerHTML += content;
       }
     }
