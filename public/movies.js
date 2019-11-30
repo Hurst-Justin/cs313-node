@@ -21,8 +21,8 @@ function search() {
     };
   
     // Set up the parameters to send to the API
-    var params = '?apikey=d28e3b70&s=' + encodeURIComponent(searchString);
-    var url = 'https://www.omdbapi.com/' + params;
+    var params = '?apikey=3f833455&page=1-2&s=' + encodeURIComponent(searchString);
+    var url = 'https://private.omdbapi.com/' + params;
   
     xhr.open('GET', url);
     xhr.send();
@@ -43,9 +43,10 @@ function search() {
         const year = data.Search[i].Year;
         const poster = data.Search[i].Poster;
         const imdb = data.Search[i].imdbID;
+    
   
         console.log('Adding: ' + title);
-        const content = `<li><h3><a href="https://www.imdb.com/title/${imdb}" target="_blank">${title} (${year})</a></h3><p><img src=${poster}  alt=${title} width="100" ></img></p></li>`;
+        const content = `<li><h3><a href="https://www.imdb.com/title/${imdb}" target="_blank">${title} (${year})</a></h3><img src=${poster}  alt=${title} height="150" ></img></li>`;
         resultList.innerHTML += content;
       }
     }
