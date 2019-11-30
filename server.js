@@ -14,7 +14,6 @@ app.use(express.static(__dirname + '/public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 app.get("/getMovie", getMovie);
-app.get('/search', movies.search)
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port:  ", app.get("port"));
 });
