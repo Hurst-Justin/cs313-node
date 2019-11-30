@@ -42,7 +42,7 @@ function search() {
         const title = data.Search[i].Title;
   
         console.log('Adding: ' + title);
-        const content = `<li><p>${title}</p></li>`;
+        const content = `<li><p>${title}</p><p>' ('${Year}')'</p></li>`;
         resultList.innerHTML += content;
       }
     }
