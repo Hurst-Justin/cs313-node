@@ -40,9 +40,11 @@ function search() {
       // data.Search.forEach(function(item){ ...process each item here })
       for (let i = 0; i < data.Search.length; i++) {
         const title = data.Search[i].Title;
+        const year = data.Search[i].Year;
+        const poster = data.Search[i].Poster;
   
         console.log('Adding: ' + title);
-        const content = `<li><p>${title}</p><p>' ('${Year}')'</p></li>`;
+        const content = `<li><p><img src=${poster}  alt=${title} width="200" ></img> ${title} (${year})</p></li>`;
         resultList.innerHTML += content;
       }
     }
