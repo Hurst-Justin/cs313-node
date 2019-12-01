@@ -21,8 +21,9 @@ function search() {
     };
   
     // Set up the parameters to send to the API
-    var params = '?apikey=3f833455&s=' + encodeURIComponent(searchString);
-    var url = 'https://private.omdbapi.com/' + params;
+    var params = '?api_key=7b9126790bdc4a5f7870fc330afb05f2&query=' + encodeURIComponent(searchString);
+    var url = 'https://api.themoviedb.org/3/search/movie' + params;
+ 
   
     xhr.open('GET', url);
     xhr.send();
@@ -32,21 +33,23 @@ function search() {
     console.log('UpdateResultList');
     console.log(data);
   
-    if (data.Search && data.Search.length > 0) {
+    if (data.results && data.results.length > 0) {
       const resultList = document.getElementById('ulResults');
       resultList.innerHTML = '';
       
       // you could use a forEach here as well...it would change the following line like this:
-      // data.Search.forEach(function(item){ ...process each item here })
-      for (let i = 0; i < data.Search.length; i++) {
-        const title = data.Search[i].Title;
-        const year = data.Search[i].Year;
-        const poster = data.Search[i].Poster;
-        const imdb = data.Search[i].imdbID;
-    
+      // data.results.forEach(function(item){ ...process each item here })
+      for (let i = 0; i < data.results.length; i++) {
+        const title = data.results[i].title;
+        const dateY = new Date(data.results[i].release_date);
+        const year = dateY.getFullYear();
+        const poster = "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path;
+        const movie_id = data.results[i].id;
+        const overview = data.results[i].overview;
+        const popularity = data.results[i].popularity;           
   
         console.log('Adding: ' + title);
-        const content = `<li><h3><a href="https://www.imdb.com/title/${imdb}" target="_blank">${title} (${year})</a></h3><img src=${poster}  alt=${title} height="150" ></img></li>`;
+        const content = `<li><a href="https://www.themoviedb.org/movie/${movie_id}" class="title" target="_blank">${title} (${year})</a></br></br><p class="overview">${overview}</p><img src=${poster}  alt=${title} height="150px"></img></li>`;
         resultList.innerHTML += content;
       }
     }
