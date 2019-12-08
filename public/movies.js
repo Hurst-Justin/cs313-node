@@ -5,7 +5,7 @@ const pool = new Pool({connectionString: connectionString});
 function addMovie(movie_id){
   console.log("adding movies with id:  ", movie_id);
 
-  var sql = "INSERT INTO movies (movie_id) VALUES (" + id + ")";
+  var sql = "INSERT INTO movies (movie_id) VALUES (" + movie_id + ")";
   console.log("SQL:  ", sql);
   pool.query(sql) 
 }
