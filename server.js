@@ -58,3 +58,23 @@ function getMovieFromDb(id, callback){
     })
 }
 
+function addMovieToDB(id, callback){
+    console.log("addMovieToDB called with id:  ", id);
+
+    var sql = "SELECT id, title, releasedate, mpaa, genre, director, runtime, studio, summary, movie_id FROM movies WHERE movie_id<<< = $1::int";
+    var params = [id];
+
+    pool.query(sql, params, function(err, result) {
+        if (err) {
+            console.log("An errror with the DB occurred");
+            console.log(err);
+            callback(err, null);
+        }
+
+        console.log("Found DB result:  ", JSON.stringify(result.rows));
+
+        callback(null, result.rows);
+        pool.release();
+
+    })
+}
