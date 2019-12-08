@@ -1,7 +1,7 @@
 
 
 function addMovie(movie_id){
-  const { Pool } = require("pg");
+  
   const connectionString = process.env.DATABASE_URL || "postgres://familyhistoryuser:elijah@localhost:5432/familyhistory";
   const pool = new Pool({connectionString: connectionString});
   console.log("adding movies with id:  ", movie_id);
