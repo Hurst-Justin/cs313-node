@@ -29,6 +29,8 @@ function search() {
     xhr.send();
   }
   
+
+
   function updateResultList(data) {
     console.log('UpdateResultList');
     console.log(data);
@@ -49,8 +51,13 @@ function search() {
         const popularity = data.results[i].popularity;           
   
         console.log('Adding: ' + title);
-        const content = `<li><a href="https://www.themoviedb.org/movie/${movie_id}" class="title" target="_blank">${title} (${year})</a></br></br><p class="overview">${overview}</p><img src=${poster}  alt=${title} height="150px"></img></li>`;
+        const content = `<li><a href="https://www.themoviedb.org/movie/${movie_id}" class="title" target="_blank">${title} (${year})</a><button class="button1" onclick="add(${movie_id});">Add</button><p class="overview">${overview}</p><img src=${poster}  alt=${title} height="150px"></img></li>`;
         resultList.innerHTML += content;
       }
     }
   }
+
+  function add(movie_id){
+    
+    alert(movie_id);
+ }
