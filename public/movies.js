@@ -61,7 +61,7 @@ function search() {
     const resultList = document.getElementById('ulResults');
       resultList.innerHTML = '';
     content = '<h1>Added Movie:</h1>'
-    resultList.innerHTML += content + '<a href="https://www.themoviedb.org/movie/'+ movie_id + '" target="_blank">' + title + ' (' + year + ')</a>'
+    resultList.innerHTML += content + '<a href="/getMovie?id='+ movie_id + '" target="_blank">' + title + ' (' + year + ')</a>'
 
     // var sql = "INSERT INTO (movie_id) VALUES ("+ movie_id +")";
     // console.log("SQL:  " + sql);
