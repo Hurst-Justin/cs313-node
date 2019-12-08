@@ -13,6 +13,7 @@ app.use(express.static(__dirname + '/public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 app.get("/getMovie", getMovie);
+
 // app.get("/search", search);
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port:  ", app.get("port"));
@@ -56,3 +57,17 @@ function getMovieFromDb(id, callback){
     })
 }
 
+function addMovie(movie_id){
+  
+    var sql = "INSERT INTO movies (movie_id) VALUES (" + movie_id + ")";
+    console.log("SQL:  ", sql);
+    pool.query(sql) 
+  
+    // pool.query(
+    //   "INSERT INTO movies (movie_id) VALUES (" + movie_id + ")",
+    //   (err, res) => {
+    //     console.log(err, res);
+    //     pool.end();
+    //   }
+    // );
+  }
