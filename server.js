@@ -14,6 +14,8 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 app.get("/getMovie", getMovie);
 
+app.get("/addMovie", addMovie);
+
 // app.get("/search", search);
 app.listen(app.get("port"), function() {
     console.log("Now listening for connections on port:  ", app.get("port"));
