@@ -58,38 +58,6 @@ function search() {
   }
 
   function addMovie(movie_id){
-
-     console.log("Adding movie with id:  ", movie_id);
-  
-      addMovieToDB(movie_id, function(error, result) {
-          if(error || result == null || result.length != 1){
-              res.status(500).json({success:false, data:error});
-          } else {
-              // var result = {id: id, title: title, releasedate: releasedate};
-              // res.render('results.ejs', result);
-              res.json(result[0]);
-          }
-      })
-  
-  }
-  
-  function addMovieToDB(id, callback){
-      console.log("addMovieToDB called with id:  ", id);
-  
-      var sql = "INSERT INTO movies (movie_id) VALUES ($1::int)";
-      var params = [id];
-  
-      pool.query(sql, params, function(err, result) {
-          if (err) {
-              console.log("An errror with the DB occurred");
-              console.log(err);
-              callback(err, null);
-          }
-  
-          console.log("Found DB result:  ", JSON.stringify(result.rows));
-  
-          callback(null, result.rows);
-  
-      })
-  }
+    window.location = "form.html"
+    alert(movie_id);
  }
