@@ -1,5 +1,5 @@
-const { Pool } = require("pg");
-const connectionString = process.env.DATABASE_URL || "postgres://familyhistoryuser:elijah@localhost:5432/familyhistory";
+// const { Pool } = require("pg");
+// const connectionString = process.env.DATABASE_URL || "postgres://familyhistoryuser:elijah@localhost:5432/familyhistory";
 const pool = new Pool({connectionString: connectionString});
 
 function addMovie(movie_id){
