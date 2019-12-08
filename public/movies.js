@@ -80,16 +80,6 @@ function search() {
   console.log("SQL:  ", sql);
   var params = [id];
 
-  Pool.query(sql, params, function(err, result) {
-      if (err) {
-          console.log("An errror with the DB occurred");
-          console.log(err);
-          callback(err, null);
-      }
-
-      console.log("Found DB result:  ", JSON.stringify(result.rows));
-
-      callback(null, result.rows);
-
-  })
+  pool.query(sql, params)
+  
 }
