@@ -1,5 +1,3 @@
-var server = require('../server.js');
-
 function search() {
     // Get the value from the search box
     var searchString = document.getElementById('txtSearch').value;
@@ -53,10 +51,20 @@ function search() {
         const popularity = data.results[i].popularity;           
   
         console.log('Adding: ' + title);
-        const content = `<li><a href="https://www.themoviedb.org/movie/${movie_id}" class="title" target="_blank">${title} (${year})</a><button class="button1" onclick="addMovie(${movie_id}, '${title}', ${year});">Add</button><p class="overview">${overview}</p><img src=${poster}  alt=${title} height="150px"></img></li>`;
+        const content = `<li><a href="https://www.themoviedb.org/movie/${movie_id}" class="title" target="_blank">${title} (${year})</a><button class="button1" oonclick="addMovie(${movie_id}, '${title}', ${year});">Add</button><p class="overview">${overview}</p><img src=${poster}  alt=${title} height="150px"></img></li>`;
         resultList.innerHTML += content;
       }
     }
   }
 
-  
+  function addMovie(movie_id, title, year){
+    const resultList = document.getElementById('ulResults');
+      resultList.innerHTML = '';
+    content = '<h1>Added Movie:</h1>'
+    resultList.innerHTML += content + '<a href="https://www.themoviedb.org/movie/'+ movie_id + '" target="_blank">' + title + ' (' + year + ')</a>'
+
+    // var sql = "INSERT INTO (movie_id) VALUES ("+ movie_id +")";
+    // console.log("SQL:  " + sql);
+    // pool.query(sql);   
+
+ }
