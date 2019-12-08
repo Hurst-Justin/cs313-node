@@ -51,7 +51,7 @@ function search() {
         const popularity = data.results[i].popularity;           
   
         console.log('Adding: ' + title);
-        const content = `<li><a href="https://www.themoviedb.org/movie/${movie_id}" class="title" target="_blank">${title} (${year})</a><button class="button1" oonclick="addMovie(${movie_id}, '${title}', ${year});">Add</button><p class="overview">${overview}</p><img src=${poster}  alt=${title} height="150px"></img></li>`;
+        const content = `<li><a href="https://www.themoviedb.org/movie/${movie_id}" class="title" target="_blank">${title} (${year})</a><button class="button1" onclick="addMovie(${movie_id}, '${title}', ${year});">Add</button><p class="overview">${overview}</p><img src=${poster}  alt=${title} height="150px"></img></li>`;
         resultList.innerHTML += content;
       }
     }
