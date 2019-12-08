@@ -23,9 +23,9 @@ h1, h2, h3, h4 {
 body{
     color: #009dd9;
     background-color: rgb(53, 53, 53);
-    width: 100%;
-    
-    /* margin-left: 50px; */
+    width: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
     /* grid-column: 1/4; */
 }
 .header{
