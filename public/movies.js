@@ -60,5 +60,5 @@ function search() {
   function addMovie(movie_id){
     window.location = "form.html"
     document.getElementById("id").value = movie_id;
-    // alert(movie_id);
+    alert("Added Movie:  " + movie_id);
  }
