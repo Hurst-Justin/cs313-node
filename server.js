@@ -1,5 +1,5 @@
 var express = require("express");
-var movies = require('/public/movies.js');
+var movies = require('./public/movies.js');
 var app = express();
 
 const { Pool } = require("pg");
