@@ -1,4 +1,26 @@
+const { Pool } = require("pg");
+const connectionString = process.env.DATABASE_URL || "postgres://familyhistoryuser:elijah@localhost:5432/familyhistory";
+const pool = new Pool({connectionString: connectionString});
 
+function addMovie(movie_id){
+  console.log("adding movies with id:  ", movie_id);
+
+  addMovieToDB(movie_id, function(error, result) {
+      if(error || result == null || result.length != 1){
+          res.status(500).json({success:false, data:error});
+      } else {
+          res.json(result[0]);
+      }
+  })
+}
+
+function addMovieToDB(id, callback){
+console.log("addMovieToDB called with id:  ", id);
+
+var sql = "INSERT INTO movies (movie_id) VALUES (" + id + ")";
+console.log("SQL:  ", sql);
+pool.query(sql)  
+}
 
 function search() {
     // Get the value from the search box
@@ -58,26 +80,3 @@ function search() {
       }
     }
   }
-  // const { Pool } = require("pg");
-  // const connectionString = process.env.DATABASE_URL || "postgres://familyhistoryuser:elijah@localhost:5432/familyhistory";
-  // const pool = new Pool({connectionString: connectionString});
-
-  function addMovie(movie_id){
-    console.log("adding movies with id:  ", movie_id);
-
-    addMovieToDB(movie_id, function(error, result) {
-        if(error || result == null || result.length != 1){
-            res.status(500).json({success:false, data:error});
-        } else {
-            res.json(result[0]);
-        }
-    })
- }
-
- function addMovieToDB(id, callback){
-  console.log("addMovieToDB called with id:  ", id);
-
-  var sql = "INSERT INTO movies (movie_id) VALUES (" + id + ")";
-  console.log("SQL:  ", sql);
-  pool.query(sql)  
-}
