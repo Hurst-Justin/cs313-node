@@ -76,7 +76,7 @@ function search() {
  function addMovieToDB(id, callback){
   console.log("addMovieToDB called with id:  ", id);
 
-  var sql = "INSERT INTO movies (movie_id) VALUES ($1::int)";
+  var sql = "INSERT INTO movies (movie_id) VALUES (" + id + ")";
   console.log("SQL:  ", sql);
   var params = [id];
 
