@@ -1,3 +1,5 @@
+const { Pool } = require("pg");
+
 function search() {
     // Get the value from the search box
     var searchString = document.getElementById('txtSearch').value;
