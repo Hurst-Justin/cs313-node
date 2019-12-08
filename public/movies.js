@@ -1,5 +1,5 @@
-// const { Pool } = require("pg");
-// const connectionString = process.env.DATABASE_URL || "postgres://familyhistoryuser:elijah@localhost:5432/familyhistory";
+const { Pool } = require("pg");
+const connectionString = process.env.DATABASE_URL || "postgres://familyhistoryuser:elijah@localhost:5432/familyhistory";
 const pool = new Pool({connectionString: connectionString});
 
 function addMovie(movie_id){
@@ -9,7 +9,7 @@ function addMovie(movie_id){
   // console.log("SQL:  ", sql);
   // pool.query(sql) 
 
-  pool.query(
+  Pool.query(
     // "INSERT INTO movies (movie_id) VALUES (" + movie_id + ")",
     // (err, res) => {
     //   console.log(err, res);
