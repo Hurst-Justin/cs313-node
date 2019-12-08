@@ -58,6 +58,9 @@ function search() {
   }
 
   function add(movie_id){
-    
+    window.location = "form.html"
+  //   $('div').load(' div', function () {
+  //     $("input[id='id']").val(movie_id);
+  // });
     alert(movie_id);
  }
