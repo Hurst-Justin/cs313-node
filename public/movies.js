@@ -10,11 +10,11 @@ function addMovie(movie_id){
   // pool.query(sql) 
 
   pool.query(
-    "INSERT INTO movies (movie_id) VALUES (" + movie_id + ")",
-    (err, res) => {
-      console.log(err, res);
-      pool.end();
-    }
+    // "INSERT INTO movies (movie_id) VALUES (" + movie_id + ")",
+    // (err, res) => {
+    //   console.log(err, res);
+    //   pool.end();
+    // }
   );
 }
 
