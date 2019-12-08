@@ -1,3 +1,23 @@
+
+
+function addMovie(movie_id){
+  const pool = new Pool({connectionString: connectionString});
+  console.log("adding movies with id:  ", movie_id);
+
+  // var sql = "INSERT INTO movies (movie_id) VALUES (" + movie_id + ")";
+  // console.log("SQL:  ", sql);
+  // pool.query(sql) 
+
+  pool.query(
+    // "INSERT INTO movies (movie_id) VALUES (" + movie_id + ")",
+    // (err, res) => {
+    //   console.log(err, res);
+    //   pool.end();
+    // }
+  );
+}
+
+
 function search() {
     // Get the value from the search box
     var searchString = document.getElementById('txtSearch').value;
