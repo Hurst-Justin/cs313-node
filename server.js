@@ -39,7 +39,7 @@ function getMovie(req,res){
 function getMovieFromDb(id, callback){
     console.log("getMovieFromDb called with id:  ", id);
 
-    var sql = "SELECT id, title, releasedate, mpaa, genre, director, runtime, studio, summary, movie_id FROM movies WHERE movie_id = $1::int";
+    var sql = "SELECT id, title, releasedate, mpaa, genre, director, runtime, studio, summary, movie_id FROM movies WHERE movie_id<<< = $1::int";
     var params = [id];
 
     pool.query(sql, params, function(err, result) {
@@ -52,6 +52,7 @@ function getMovieFromDb(id, callback){
         console.log("Found DB result:  ", JSON.stringify(result.rows));
 
         callback(null, result.rows);
+        pool.release();
 
     })
 }

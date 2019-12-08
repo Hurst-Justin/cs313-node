@@ -1,8 +1,7 @@
-h1, h2, h3, h4 {
+a, h1, h2, h3, h4 {
     color: #009dd9;
     width: 100%;
     margin-bottom: 0px;
-
     text-align: center;
 }
 .title{color: #009dd9;
@@ -26,7 +25,7 @@ body{
     width: 80%;
     margin-top: 5%;
     margin-left: 10%;
-    /* grid-column: 1/4; */
+    margin-right: 10%;
 }
 .header{
     text-align: center;
