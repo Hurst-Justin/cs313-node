@@ -39,8 +39,6 @@ function search() {
       const resultList = document.getElementById('ulResults');
       resultList.innerHTML = '';
       
-      // you could use a forEach here as well...it would change the following line like this:
-      // data.results.forEach(function(item){ ...process each item here })
       for (let i = 0; i < data.results.length; i++) {
         const title = data.results[i].title;
         const dateY = new Date(data.results[i].release_date);
